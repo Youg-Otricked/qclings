@@ -1,0 +1,12 @@
+commands:
+  build: qc main.qc -o qclings
+  run: qc main.qc -o qclings && ./qclings
+  test: null
+dependencies: {}
+project:
+  author: luca
+  description: null
+  name: C^4lings
+  qc_version: x0.27.05
+  repo: null
+  version: 1.0.0

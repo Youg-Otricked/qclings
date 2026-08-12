@@ -1,0 +1,29 @@
+intro -> vars & basic types & the most basic basics -> 
+
+if -> loops -> switcj
+
+functions ->  
+
+qbool stuff ->
+
+intrinsics -> 
+
+structs -> 
+
+manual memory managment -> 
+
+enums -> unions and aliases -> 
+
+defer -> variadics -> inline asm ->
+
+classes -> inheritance -> operator overloading ->
+
+generics ->
+
+namespaces -> include system ->
+
+trycatch -> non trycatch error handling -> 
+
+conventions -> package manager -> Package, API, library, and styling structure -> bad practices -> 
+
+concepts
