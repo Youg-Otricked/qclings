@@ -10,20 +10,22 @@ intrinsics ->
 
 structs -> 
 
-manual memory managment -> 
+manual memory managment -> bitwise -> 
 
 enums -> unions and aliases -> 
 
 defer -> variadics -> inline asm ->
 
-classes -> inheritance -> operator overloading ->
+classes + inheritance + operator overloading ->
 
 generics ->
 
-namespaces -> include system ->
+namespaces -> include system -> c interop ->
 
 trycatch -> non trycatch error handling -> 
 
 conventions -> package manager -> Package, API, library, and styling structure -> bad practices -> 
+
+iterators ->
 
 concepts

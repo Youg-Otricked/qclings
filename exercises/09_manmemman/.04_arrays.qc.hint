@@ -1,0 +1,1 @@
+Make sure not to count the null terminator (`\0`)

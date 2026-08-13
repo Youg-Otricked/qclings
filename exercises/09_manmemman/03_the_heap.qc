@@ -29,7 +29,7 @@ However this does create a problem: Freeing twice.
 
 Same problem happens for using a pointer after freeing it. UB/Segfault
 
-So this is where the ideas of ownership come in, which is basically "Who frees what and when". You'll learn about this in lesson 09 of this section.
+So this is where the ideas of ownership come in, which is basically "Who frees what and when". You'll learn about this in lesson 06 of this section.
 
 Malloc can return nullptr if it gets somthing invalid, e.g. a size of 0, or there is no memory left. So you need to null-check it.
 
