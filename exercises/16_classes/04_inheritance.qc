@@ -15,11 +15,10 @@ class Child : Base {
     } // Replaces Base's doStuff
 }
 
-In constructors to initialize parent fields, you can make the first line a constructor call.
+In constructors to initialize parent fields, you can call the parent constructor by after the parenthesies putting a : PARENT_CALL 
 
 class Child {
-    Child() {
-        Base();
+    Child() : Base() {
         ...
     }
 }

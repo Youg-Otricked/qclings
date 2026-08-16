@@ -24,7 +24,7 @@ namespaces -> include system -> c interop ->
 
 trycatch -> non trycatch error handling -> 
 
-conventions -> package manager -> Package, API, library, and styling structure -> bad practices -> 
+conventions, package manager, Package, API, library, and styling structure -> 
 
 iterators ->
 

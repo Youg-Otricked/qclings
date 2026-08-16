@@ -151,7 +151,7 @@ int main(int argc, char** argv) {
     while (true) {
         `qout("\n");
         `qout("Exercise: %s\n", sourceFile);
-        `qout("[c]heck [n]ext [h]int [l]ist [q]uit\n");
+        `qout("[c]heck [n]ext [h]int [q]uit\n");
         `qout("> ");
         `flush();
         int event = wait_event(watcher);
@@ -202,67 +202,51 @@ int main(int argc, char** argv) {
                     `qout("Can only advance after completing lesson\n");
                     continue;
                 }
-                int fd = `open(".progress.txt", "r+");
-                if (fd == -1) {
-                    `qout("Could not open progress file.\n");
-                    close_file_watcher(watcher);
-                    return 1;
-                }
-                char[3] dir = [char, 3];
-                char nl;
-                char[3] file = [char, 3];
-                `read(fd, dir, 2);
-                `read(fd, &nl, 1);
-                `read(fd, file, 2);
-                `close(fd);
-                dir[2] = '\0';
-                file[2] = '\0';
-                int nextFile = `to_int(&(file[0]));
-                nextFile = nextFile + 1;
+
+                int nextFile = `to_int(&(fileNumber[0])) + 1;
                 char[3] nextFileNumber = [char, 3];
                 nextFileNumber[0] = '0' + (nextFile / 10);
                 nextFileNumber[1] = '0' + (nextFile % 10);
                 nextFileNumber[2] = '\0';
-                void* exercisesDirNext = opendir("exercises");
-                if (!exercisesDirNext) {
-                    `qout("Could not open exercises directory.\n");
-                    close_file_watcher(watcher);
-                    return 1;
+                void* curDirHandle = opendir("exercises/" + directory);
+                string nextExercise = "";
+                if (curDirHandle) {
+                    nextExercise = is_in_dir(curDirHandle, &(nextFileNumber[0]));
+                    closedir(curDirHandle);
                 }
-                string currentDirectory = is_in_dir(exercisesDirNext, &(dir[0]));
-                closedir(exercisesDirNext);
-                if (currentDirectory == "") {
-                    `qout("Congrats on finishing C^4lings!\n");
-                    close_file_watcher(watcher);
-                    return 0;
-                }
-                void* nextDir = opendir("exercises/" + currentDirectory);
-                if (!nextDir) {
-                    `qout("Could not open current exercise directory.\n");
-                    close_file_watcher(watcher);
-                    return 1;
-                }
-                string nextExercise = is_in_dir(nextDir, &(nextFileNumber[0]));
-                `close(nextDir);
+                string nextDirName = directory;
+                char[3] nextDirNumber = directoryNumber;
                 if (nextExercise == "") {
-                    int nextDirectory = `to_int(&(dir[0]));
-                    nextDirectory = nextDirectory + 1;
-                    char[3] nextDirectoryNumber = [char, 3];
-                    nextDirectoryNumber[0] = '0' + (nextDirectory / 10);
-                    nextDirectoryNumber[1] = '0' + (nextDirectory % 10);
-                    nextDirectoryNumber[2] = '\0';
-                    dir = nextDirectoryNumber;
-                    nextFileNumber = "01";
-                    void* nextDirectoryDir = opendir("exercises/" + &(dir[0]));
-                    if (!nextDirectoryDir) {
-                        `qout("Congrats on finishing C^4lings!\n");
+                    int nextDirInt = `to_int(&(directoryNumber[0])) + 1;
+                    nextDirNumber[0] = '0' + (nextDirInt / 10);
+                    nextDirNumber[1] = '0' + (nextDirInt % 10);
+                    nextDirNumber[2] = '\0';
+                    nextFileNumber[0] = '0';
+                    nextFileNumber[1] = '1';
+                    nextFileNumber[2] = '\0';
+                    void* exDirHandle = opendir("exercises");
+                    if (!exDirHandle) {
+                        `qout("Could not open exercises directory.\n");
+                        close_file_watcher(watcher);
+                        return 1;
+                    }
+                    nextDirName = is_in_dir(exDirHandle, &(nextDirNumber[0]));
+                    closedir(exDirHandle);
+                    if (nextDirName == "") {
+                        `qout("\nCongrats on finishing C^4lings!\n");
                         close_file_watcher(watcher);
                         return 0;
                     }
-                    nextExercise = is_in_dir(nextDirectoryDir, &(nextFileNumber[0]));
-                    `close(nextDirectoryDir);
+                    void* targetDirHandle = opendir("exercises/" + nextDirName);
+                    if (!targetDirHandle) {
+                        `qout("Could not open next exercise directory.\n");
+                        close_file_watcher(watcher);
+                        return 1;
+                    }
+                    nextExercise = is_in_dir(targetDirHandle, &(nextFileNumber[0]));
+                    closedir(targetDirHandle);
                     if (nextExercise == "") {
-                        `qout("Could not find next exercise.\n");
+                        `qout("Could not find first exercise in next directory.\n");
                         close_file_watcher(watcher);
                         return 1;
                     }
@@ -273,44 +257,21 @@ int main(int argc, char** argv) {
                     close_file_watcher(watcher);
                     return 1;
                 }
-                `write(writeFd, dir);
+                `write(writeFd, &(nextDirNumber[0]));
                 `write(writeFd, "\n");
-                `write(writeFd, nextFileNumber);
+                `write(writeFd, &(nextFileNumber[0]));
                 `close(writeFd);
-                void* nextExercisesDir = opendir("exercises");
-                if (!nextExercisesDir) {
-                    `qout("Could not open exercises directory.\n");
-                    close_file_watcher(watcher);
-                    return 1;
-                }
-                string nextDirectoryName = is_in_dir(nextExercisesDir, &(dir[0]));
-                closedir(nextExercisesDir);
-                if (nextDirectoryName == "") {
-                    `qout("Congrats on finishing C^4lings!\n");
-                    close_file_watcher(watcher);
-                    return 0;
-                }
-                void* nextDirectoryDir = opendir("exercises/" + nextDirectoryName);
-                if (!nextDirectoryDir) {
-                    `qout("Could not open next exercise directory.\n");
-                    close_file_watcher(watcher);
-                    return 1;
-                }
-                nextExercise = is_in_dir(nextDirectoryDir, &(nextFileNumber[0]));
-                `close(nextDirectoryDir);
-                if (nextExercise == "") {
-                    `qout("Could not find next exercise.\n");
-                    close_file_watcher(watcher);
-                    return 1;
-                }
-                string nextSourceFile = "exercises/" + nextDirectoryName + "/" + nextExercise;
+                directoryNumber = nextDirNumber;
+                fileNumber = nextFileNumber;
+                directory = nextDirName;
+                exercise = nextExercise;
+                sourceFile = "exercises/" + directory + "/" + exercise;
                 close_file_watcher(watcher);
-                watcher = watch_file(nextSourceFile);
+                watcher = watch_file(sourceFile);
                 if (!watcher) {
-                    `qout("Could not watch exercise file.\n");
+                    `qout("Could not watch exercise file: %s\n", sourceFile);
                     return 1;
                 }
-                sourceFile = nextSourceFile;
                 `qout("Next exercise: %s\n", sourceFile);
                 canAdvance = false;
                 `qout("\nChecking...\n");

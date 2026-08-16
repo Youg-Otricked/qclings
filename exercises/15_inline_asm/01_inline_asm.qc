@@ -25,24 +25,10 @@ int x = 10;
 `inline(R"(
     add $0r, $1r
 )", x, 5, "~{cc}");
-
-TODO: Use inline assembly to add 10 to `x`.
-
-Basic assembly reference for this lesson:
-    the add instruction adds
-    you can use constant integers
-    you won't need to clober anything, so leave the string as ""
-    to add 3 to rax, i would use 
-
-    add rax, 3
 */
 
 // Don't touch below this line.
 int main() {
-    int x = 32;
-
-    // Your code here.
-
-    `qout("%i", x);
+    `qout("No challenge for this lesson");
     return 0;
 }

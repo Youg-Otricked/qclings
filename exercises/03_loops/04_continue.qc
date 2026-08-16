@@ -16,7 +16,7 @@ for (int i = 0; i < 10; i++) {
 */
     // TODO: if i is divisible by 5, skip the iteration.
     for (int i = 0; i < 10; i++) {
-        `qout("%i", i);
+        `qout("%i ", i);
     }
     return 0;
 }

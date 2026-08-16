@@ -130,7 +130,6 @@ Functions also have scope, just like if statements
 // 2 doubles, width and height and returns the area of the rectangle (double).
 
 int main() {
-    // TODO: Call it with 7.3 and 6.2 and print the result.
-
+    `qout("%.2d", /* TODO: Call it with 7.3 and 6.2 */);
     return 0;
 }

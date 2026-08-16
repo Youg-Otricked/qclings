@@ -7,9 +7,9 @@ int addALot(...args) {
 }
 
 The variadic parameter contains all arguments passed after the normal parameters.
-You can check whether there are arguments remaining with `isEmpty`, which returns a bool, true if there are no args left:
+You can check whether there are arguments remaining with `is_empty`, which returns a bool, true if there are no args left:
 
-`isEmpty(args)
+`is_empty(args)
 
 You can retrieve the next argument with `next`:
 
@@ -21,7 +21,7 @@ For example:
 
 int addALot(...args) {
     int res;
-    while (!`isEmpty(args)) {
+    while (!`is_empty(args)) {
         res += `next(args, int);
     }
     return res;

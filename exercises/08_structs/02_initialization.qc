@@ -10,7 +10,7 @@ struct Point {
 We could use:
 
 1. Ordered initialization
-    Point center = {0, 0};
+    Point center = Point{0, 0};
 The values are assigned to the fields in the order they are declared.
 `0` goes to `x`.
 `0` goes to `y`.
@@ -23,16 +23,19 @@ p.x = 10;
 p.y = 20;
 
 2. Keyed initialization
-    Point top_left = {x: -1, y: 1};
+    Point top_left = Point{x: -1, y: 1};
 With keyed initialization, each value is explicitly assigned to a field by name.
 This means the order does not matter:
 
-Point top_left = {y: 1, x: -1};
+Point top_left = Point{y: 1, x: -1};
 
 Both fields are still initialized correctly.
 Keyed initialization can be useful when a struct has many fields, because it makes it clear which value belongs to which field.
 
 To initialize nested structs, you just nest initializers.
+
+For SINGLE layer initializers, during assignment specifically, you can omit the type.
+Point top = {y: 1, x: -1};
 
 TODO: Create a struct called `Player` with a string name, integer health and integer score.
 */

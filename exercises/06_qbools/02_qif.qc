@@ -5,7 +5,7 @@ qif (...) {
 } qelse {
 }
 
-The qif block runs if the condition is qtrue or both and the qelse block runs on qfalse or both. Yes, this means that both blocks could run or no blocks could run.
+The qif block runs if the condition is qtrue or both and the qelse block runs on qfalse. This means no blocks run on none.
 
 You can also use qelif (else if for qbool), but it is less useful, as the qelse only applys to the last condition.
 

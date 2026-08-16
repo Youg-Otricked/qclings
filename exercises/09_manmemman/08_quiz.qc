@@ -38,6 +38,8 @@ In main:
 14. Store 30 in the new third element.
 15. Print all three elements.
 16. Free the final pointer returned by realloc.
+
+Make sure to remember to wrap sizeof's with parenthesis if using a * after, because otherwise it will thing you are trying to sizeof int *
 Quick ownership reference:
 - Creating a heap allocation makes you its owner.
 - Copying a heap pointer does not create another owner.
