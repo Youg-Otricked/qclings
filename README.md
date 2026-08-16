@@ -17,6 +17,7 @@ qcm init
 qcm add qclings@
 cp dependencies/qclings@/* . -R
 ./qclings setup
+qcm tooling install latest
 ```
 
 ### Use:
