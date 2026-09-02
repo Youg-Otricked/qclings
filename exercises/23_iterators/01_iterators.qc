@@ -15,7 +15,11 @@ To define a iterator:
     * Should define a `_moveTo` method which 
     * Can define a `_map` method which takes a lambda and maps each element through that lambda and returns a new iterator (that mapped collection)
     * If defines a `_map` make sure to define _collect which collects the iterator to a collection
-
+    * Can define a `_filter` method which takes a lambda of element type which returns bool returns a iterator of only the elements that are true for that lambda
+    * Can define a `_inval_destroy` method which invalidates the collection this iterator iterates
+    * Can define a `_take` method which takes a int and returns a iterator to the first <the int> elements
+    * Can define a `_drop` method which takes a int and returns a iterator skipping the first <the int> elements
+`
 */
 int main() {
     `qout("No exercise. Just read the lesson");
