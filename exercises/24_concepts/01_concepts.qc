@@ -74,7 +74,7 @@ Now, Integer has methods. Concepts are NOT for giving non-class usertypes method
 
 So you remember how generic main constraints could have been pointer, numeric, usertype, or primitive? Well they can also be any concept.
 
-void doStuff<T(Mathmatical:)>() {
+void doStuff<T(proves Mathmatical:)>() {
     ...
 }
 

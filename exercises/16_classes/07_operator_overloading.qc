@@ -7,7 +7,7 @@ operator-(<other type> other)...
 It's as you would expect for all the other binops, then unary operator overloads just take no parameters, and then there are a few special ones.
 1. roperator
     roperators run when the class is used as the _rhs_ of a expression. 
-    Roperators exist for - / % %^ |> :> |>> << and <<< because those are the only ones which matter with a different rhs.
+    Roperators exist for - / % #^ |> :> |>> << and <<< because those are the only ones which matter with a different rhs.
     
     roperator-(int lhs) {...}
 2. operator[]=
