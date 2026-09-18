@@ -44,6 +44,7 @@ throw;
 
 This continues searching for another matching catch block further up the call stack.
 Exceptions should be used for exceptional control flow. C^4 also provides non-exception error handling, which will be covered in the next lesson.
+Nested try/catch blocks are not allowed becuase they just obfuscate what your code is doing without adding any new functionality.
 */
 
 // Don't touch below this line.

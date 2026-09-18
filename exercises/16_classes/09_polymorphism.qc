@@ -21,6 +21,7 @@ int main() {
     p = &c;
     return p->four(); // 444
 }
+If you want to use polymorphism, you MUST define methods in the order of the parent, then others after, because otherwise the vtables will be jacked up.
 */
 int main() {
     `qout("No challenge. Just read the lesson");
