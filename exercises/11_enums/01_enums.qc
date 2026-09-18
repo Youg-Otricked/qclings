@@ -20,12 +20,11 @@ TODO: Define the ErrorCode enum. It should have the following members.
 - OH_GOD: 500
 - PAYMENT_REQUIRED: 402
 - IM_A_TEAPOT: 418
-Printing a enum will print it's _index_. To print the actual value, use the `extract builtin
 */
 
 // Don't touch below this line.
 int main() {
-    `qout("%i, ", `extract(ErrorCode.NOT_FOUND));
-    `qout("%i", `extract(ErrorCode.IM_A_TEAPOT));
+    `qout("%i, ", ErrorCode.NOT_FOUND);
+    `qout("%i", ErrorCode.IM_A_TEAPOT);
     return 0;
 }
