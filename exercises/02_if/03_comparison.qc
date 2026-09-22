@@ -1,6 +1,6 @@
 int main() {
 /*
-QuantumC also has comparison operators.
+QuarticC also has comparison operators.
 
 - > more than
 - < less than

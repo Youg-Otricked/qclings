@@ -1,5 +1,5 @@
 /*
-QuantumC has unusual naming conventions:
+QuarticC has unusual naming conventions:
 Type,Casing,Why
 Variable,snake_case,It's familiar to C++, C, Zig, Go, and Rust devs.
 Functions,camelCase,It allows for instant knowledge between if an identifier is a var, or function (lambdas use var casing, not function casing) 
@@ -46,7 +46,7 @@ int** *x;
 int* ptr_add(int *p) ...
 ```
 Files are `kebab-case` (optional, sometimes I dont follow this)
-QuantumC naming conventions are designed to make code readable without requiring the reader to inspect library code. Names should provide immediate context.
+QuarticC naming conventions are designed to make code readable without requiring the reader to inspect library code. Names should provide immediate context.
 
 ## Philosophy
 

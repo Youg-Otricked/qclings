@@ -1,5 +1,5 @@
 /*
-QuantumC has a package and version manager (obviously). If you do not have it installed (you should if you use C^4lings), do.
+QuarticC has a package and version manager (obviously). If you do not have it installed (you should if you use C^4lings), do.
 Once doing so, install the latest version.
 
 qcm tooling install latest

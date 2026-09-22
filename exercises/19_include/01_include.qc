@@ -1,5 +1,5 @@
 /*
-In QuantumC, you cannot include from files. You include _namespaces_ from files. To include from a file, you first create the Exported namespace.
+In QuarticC, you cannot include from files. You include _namespaces_ from files. To include from a file, you first create the Exported namespace.
 
 namespace Exported {
 
