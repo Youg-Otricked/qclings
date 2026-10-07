@@ -4,12 +4,12 @@ You can only access fields/methods that are part of the pointers "type", not all
 and the child defines method doStuff2 even if the pointer currently holds the child, you can't use doStuff2
 
 class Base {
-    int four() {
+    virtual int four() {
         return 4;
     }
 }
 class Child {
-    int four() {
+    int four() override {
         return 444;
     }
 }
@@ -21,7 +21,8 @@ int main() {
     p = &c;
     return p->four(); // 444
 }
-If you want to use polymorphism, you MUST define methods in the order of the parent, then others after, because otherwise the vtables will be jacked up.
+
+Methods that can be overriden (replaced) by the child class must be marked "virtual", and the overriders must put 'override' right before the open brace.
 */
 int main() {
     `qout("No challenge. Just read the lesson");
