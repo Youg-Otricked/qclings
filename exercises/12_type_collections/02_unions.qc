@@ -17,11 +17,18 @@ Value x = 123;
 x = "hello";
 `qout("%s", `typeof(x)); // string
 
-Unions can also contain constant values.
+To extract values from a union, you use a match, with the types as the cases and the name you want it as as in the parens you would use for tags in a switch.
 
-type Nothing = 0.0 | 0 | 0.0f;
+match (myUnion) {
+    int(i) => ...
+    string(s) => ...
+}
 
-TODO: Define the StatusCode union, which should be any integer, "OK", or "ERROR"
+Or you can directly cast it, which doesn't require narrowing.
+
+myUnion as int;
+
+TODO: Define the StatusCode union, which should be any integer or a string.
 */
 
 // Don't touch below this line.
