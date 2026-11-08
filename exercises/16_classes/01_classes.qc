@@ -59,8 +59,8 @@ void addToX(MyClass *this) {
 }
 
 TODO: It's time to make our User struct from the structs section better, by making it a class!
-Define the Product struct, which should have a double price and a string name.
-Define the User class, which should have a integer, purchases, a double, money_spent, and a string, cardNumber.
+Define the Product struct, which should have a double price and a char* name.
+Define the User class, which should have a integer, purchases, a double, money_spent, and a char*, cardNumber.
 Define the Transaction class, which should have a Product product, and a User *user, along with a proccess function, which should check if user is null, and error with 
 the message "Transaction has no attached user yet", and otherwise increase users purchases by 1 and money_spent by price, and a attachUser method which takes a
 reference to a user and sets the transactions user to the user.

@@ -4,9 +4,9 @@ Try and Catch let you operate on errors quicker.
 Try:
 try performs a error-producing operation, returns it if it is a error state, and otherwise produces the _inner_ value. It will unwrap unions as neccesary. For example:
 
-type MyErr = int | string;
-type MyErr2 = double | string;
-try MyErrProducer(); // unwraps if error: returns a string, otherwise unwraps MyErr into a int.
+type MyErr = int | char*;
+type MyErr2 = double | char*;
+try MyErrProducer(); // unwraps if error: returns a char*, otherwise unwraps MyErr into a int.
 
 There is no value to unwrap for enums, so it just returns/produces them.
 

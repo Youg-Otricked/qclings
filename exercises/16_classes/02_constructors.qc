@@ -30,11 +30,11 @@ Then when called, C^4 determines the constructor to call at compile time.
 Constructors can also be overloaded.
 */
 struct Website {
-    string content;
-    string framework;
+    char* content;
+    char* framework;
 }
 struct Backend {
-    string language;
+    char* language;
 }
 // Don't touch above this line
 /*

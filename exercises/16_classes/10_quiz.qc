@@ -9,8 +9,8 @@ This tests:
 - Polymorphism
 
 TODO: Create a abstract class, Computer, with a int disk_size, a int cpu_cores, and a double cpu_ghz.
-TODO: Create a child final class PersonalComputer from Computer, with an additional string os, and a constructor that takes a double disk_size_tb, and should set disk_size
-to that number * 1000 (casted to int), a int cpu_cores, a double cpu_ghz, and a string os, and sets those accordingly.
+TODO: Create a child final class PersonalComputer from Computer, with an additional char* os, and a constructor that takes a double disk_size_tb, and should set disk_size
+to that number * 1000 (casted to int), a int cpu_cores, a double cpu_ghz, and a char* os, and sets those accordingly.
 TODO: Create a child final class Server, with an additional int max_users, and a constructor that takes a double disk_size_tb, int cpu_cores, double
  cpu_ghz, and int max_users and sets those respectively, similar to the PersonalComputer constructor.
 */

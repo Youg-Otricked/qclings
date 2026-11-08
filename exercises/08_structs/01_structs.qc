@@ -29,7 +29,7 @@ Player player;
 
 Because usertypes are still just types, you can put other structs (or even the same struct) in itself.
 TODO: Create a struct called `Person`.
-It should contain a string called `name` and an int called `age`
+It should contain a char* called `name` and an int called `age`
 Don't worry about giving the fields values yet.
 That comes next.
 */

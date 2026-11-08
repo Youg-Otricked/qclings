@@ -45,9 +45,9 @@ Let's do numeric.
 Now T can be any number type and anything else will error. But let's narrow this down even more. Let's say we want T to only be int or double. You can put somthign that
 looks like a union after the :.
 <T(numeric:int|double)>
-And that does it. Let's add a second paramater. Let's make it anything but a int or string. For this we can use !.
+And that does it. Let's add a second paramater. Let's make it anything but a int or char*. For this we can use !.
 
-<T(numeric:int|double), S(:!int|string)>
+<T(numeric:int|double), S(:!int|char*)>
 
 Generics can also have non-type paramaters that take constants.
 

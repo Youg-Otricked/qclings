@@ -1,16 +1,27 @@
 #link<read>
 extern:
-void* watch_file(string path);
+void* watch_file(char* path);
 int wait_event(void *watcher);
 void close_file_watcher(void *watcher);
 char* next_entry(void *dir);
 int errno;
-void* opendir(string path);
+void* opendir(char* path);
 void* readdir(void *dir_pointer);
 int closedir(void *dir_pointer);
-int system(string command);
+int system(char* command);
 :extern
-string is_in_dir(void *exercisesDir, string directoryNumber) {
+String::Str exPath(char* dir) {
+    String::Str r = "exercises/";
+    r = r + dir;
+    return r;
+}
+String::Str exFile(char* dir, char* file) {
+    String::Str r = exPath(dir);
+    r = r + "/";
+    r = r + file;
+    return r;
+}
+char* is_in_dir(void *exercisesDir, char* directoryNumber) {
     if (!exercisesDir) return "";
     char *filename = next_entry(exercisesDir);
     while (filename) {
@@ -31,8 +42,12 @@ void list_dir(void *exercisesDir) {
         filename = next_entry(exercisesDir);
     }
 }
-bool check_exercise(string path, string file) {
-    int compileResult = system("qc -o /tmp/a.out " + path + "/" + file);
+bool check_exercise(char* path, char* file) {
+    String::Str cmd = "qc -o /tmp/a.out ";
+    cmd = cmd + path;
+    cmd = cmd + "/";
+    cmd = cmd + file;
+    int compileResult = system(cmd.c_str());
     if (compileResult != 0) {
         `qout("Compilation failed.\n");
         return false;
@@ -42,8 +57,11 @@ bool check_exercise(string path, string file) {
         `qout("Exercise failed.\n");
         return false;
     }
-    string expectedFile = path + "/." + file + ".expected";
-    int expectedFd = `open(expectedFile, "r");
+    String::Str expectedFile = path;
+    expectedFile = expectedFile + "/.";
+    expectedFile = expectedFile + file;
+    expectedFile = expectedFile + ".expected";
+    int expectedFd = `open(expectedFile.c_str(), "r");
     if (expectedFd == -1) {
         int outputFd = `open("/tmp/c4lings_output.txt", "r");
         if (outputFd != -1) {
@@ -70,8 +88,8 @@ bool check_exercise(string path, string file) {
     `close(outputFd);
     expected[expectedN] = '\0';
     actual[actualN] = '\0';
-    string expectedTrimmed = `trim(&(expected[0]));
-    string actualTrimmed = `trim(&(actual[0]));
+    char* expectedTrimmed = `trim(&(expected[0]));
+    char* actualTrimmed = `trim(&(actual[0]));
     if (expectedTrimmed != actualTrimmed) {
         `qout("Exercise failed: output does not match expected output.\n");
         `qout("\n==== Actual ====\n");
@@ -118,61 +136,65 @@ int main(int argc, char** argv) {
         `qout("Could not open exercises directory.\n");
         return 1;
     }
-    string directory = is_in_dir(exercisesDir, &(directoryNumber[0]));
+    char* directory = is_in_dir(exercisesDir, &(directoryNumber[0]));
     closedir(exercisesDir);
     if (directory == "") {
         `qout("Congrats on finishing C^4lings!\n");
         return 0;
     }
-    void* currentDir = opendir("exercises/" + directory);
+    String::Str exDir = exPath(directory);
+    void* currentDir = opendir(exDir.c_str());
     if (!currentDir) {
         `qout("Could not open current exercise directory.\n");
         return 1;
     }
-    string exercise = is_in_dir(currentDir, fileNumber);
+    char* exercise = is_in_dir(currentDir, fileNumber);
     if (exercise == "") {
         `qout("Current exercise could not be found.\n");
-        `close(currentDir);
+        closedir(currentDir);
         return 1;
     }
-    `close(currentDir);    
-    string sourceFile = "exercises/" + directory + "/" + exercise;
-    void* watcher = watch_file(sourceFile);
+    closedir(currentDir);
+    String::Str sourceFile = exFile(directory, exercise);
+    void* watcher = watch_file(sourceFile.c_str());
     if (!watcher) {
         `qout("Could not watch exercise file.\n");
         return 1;
     }
     bool canAdvance = false;
     `qout("\nChecking...\n");
-    if (check_exercise("exercises/" + directory, exercise)) {
+    if (check_exercise(exDir.c_str(), exercise)) {
         `qout("Passed!\n");
         canAdvance = true;
     }
     while (true) {
         `qout("\n");
-        `qout("Exercise: %s\n", sourceFile);
+        `qout("Exercise: %s\n", sourceFile.c_str());
         `qout("[c]heck [n]ext [h]int [q]uit\n");
         `qout("> ");
         `flush();
         int event = wait_event(watcher);
         if (event == 2) {
             `qout("\nChecking...\n");
-            if (!check_exercise("exercises/" + directory, exercise)) {
+            if (!check_exercise(exDir.c_str(), exercise)) {
                 continue;
             }
             `qout("Passed!\n");
             canAdvance = true;
             continue;
         } else if (event == 1) {
-            string command = "";
+            char* command = "";
             qin |> command;
             if (command == "q") {
                 close_file_watcher(watcher);
                 return 0;
             }
             if (command == "h") {
-                string hintFile = "exercises/" + directory + "/." + exercise + ".hint";
-                int hintFd = `open(hintFile, "r");
+                String::Str hintFile = exDir;
+                hintFile = hintFile + "/.";
+                hintFile = hintFile + exercise;
+                hintFile = hintFile + ".hint";
+                int hintFd = `open(hintFile.c_str(), "r");
                 if (hintFd == -1) {
                     `qout("No hint available for this exercise.\n");
                     continue;
@@ -190,7 +212,7 @@ int main(int argc, char** argv) {
             }
             if (command == "c") {
                 `qout("\nChecking...\n");
-                if (!check_exercise("exercises/" + directory, exercise)) {
+                if (!check_exercise(exDir.c_str(), exercise)) {
                     continue;
                 }
                 `qout("Passed!\n");
@@ -208,13 +230,13 @@ int main(int argc, char** argv) {
                 nextFileNumber[0] = '0' + (nextFile / 10);
                 nextFileNumber[1] = '0' + (nextFile % 10);
                 nextFileNumber[2] = '\0';
-                void* curDirHandle = opendir("exercises/" + directory);
-                string nextExercise = "";
+                void* curDirHandle = opendir(exDir.c_str());
+                char* nextExercise = "";
                 if (curDirHandle) {
                     nextExercise = is_in_dir(curDirHandle, &(nextFileNumber[0]));
                     closedir(curDirHandle);
                 }
-                string nextDirName = directory;
+                char* nextDirName = directory;
                 char[3] nextDirNumber = directoryNumber;
                 if (nextExercise == "") {
                     int nextDirInt = `to_int(&(directoryNumber[0])) + 1;
@@ -237,7 +259,8 @@ int main(int argc, char** argv) {
                         close_file_watcher(watcher);
                         return 0;
                     }
-                    void* targetDirHandle = opendir("exercises/" + nextDirName);
+                    String::Str targetDir = exPath(nextDirName);
+                    void* targetDirHandle = opendir(targetDir.c_str());
                     if (!targetDirHandle) {
                         `qout("Could not open next exercise directory.\n");
                         close_file_watcher(watcher);
@@ -265,17 +288,18 @@ int main(int argc, char** argv) {
                 fileNumber = nextFileNumber;
                 directory = nextDirName;
                 exercise = nextExercise;
-                sourceFile = "exercises/" + directory + "/" + exercise;
+                exDir = exPath(directory);
+                sourceFile = exFile(directory, exercise);
                 close_file_watcher(watcher);
-                watcher = watch_file(sourceFile);
+                watcher = watch_file(sourceFile.c_str());
                 if (!watcher) {
-                    `qout("Could not watch exercise file: %s\n", sourceFile);
+                    `qout("Could not watch exercise file: %s\n", sourceFile.c_str());
                     return 1;
                 }
-                `qout("Next exercise: %s\n", sourceFile);
+                `qout("Next exercise: %s\n", sourceFile.c_str());
                 canAdvance = false;
                 `qout("\nChecking...\n");
-                if (check_exercise("exercises/" + directory, exercise)) {
+                if (check_exercise(exDir.c_str(), exercise)) {
                     `qout("Passed!\n");
                     canAdvance = true;
                 }

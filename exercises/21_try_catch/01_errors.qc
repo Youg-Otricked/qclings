@@ -8,7 +8,7 @@ Error types are any:
 
 Values are considered in a error state if:
 Union: The active state is _not_ tag 0 
-    int | string = error if not int
+    int | char* = error if not int
 Enum: The active state is _not_ the first variant
     enum ... { OK; Err; } = error if not OK
 Struct:

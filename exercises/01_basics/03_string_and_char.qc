@@ -6,13 +6,14 @@ char stores a single character wrapped in single quotes, E.G.
 'z'
 ```
 
-string stores a string of text in double quotes.
+char* stores a char* of text in double quotes.
 
 ```
 "Hello, World!"
 ```
+char* is actually something called a pointer. It will be explained in chapter 9.
 */
-    // TODO: Create a char variable z storing capital Z and a string variable text storing "This is a string"
+    // TODO: Create a char variable z storing capital Z and a char* variable text storing "This is a char*"
     // Don't touch below this line
     `qout("%c%c%c%c%c %s", z, z, z, z, z, text);
     return 0;

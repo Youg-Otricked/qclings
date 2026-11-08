@@ -13,8 +13,8 @@ Friendly is like friend but only for protected.
 */
 class User {
     // Give Transaction access to protected fields only.
-    protected string card_number;
-    User(string card_number) {
+    protected char* card_number;
+    User(char* card_number) {
         this->card_number = card_number;
     }
 }

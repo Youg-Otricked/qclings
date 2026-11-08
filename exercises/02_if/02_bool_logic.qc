@@ -19,7 +19,7 @@ Truthiness is:
 - float: not 0
 - double: not 0
 - char: not 0 (chars are actually 8-bit (0-255) ints)
-- string: not ""
+- char*: not ""
 - bool: the value
 
 TODO: make the printed value true if (x and y) or (x xor z) is true.

@@ -36,12 +36,11 @@ The [] operator can be used on pointers too, and just means *(pointer + index), 
 so on a int* [1] would give 4 so [1] would give the _second_ element, because its the pointer(which points to the 1st element) + 4 (the second element) dereferenced.
 
 All arrays decay to pointers in function parameters, so instead of using [] as the type you are recomended to use pointer types to be more accurate.
-Strings are actually char*, which is a array of characters, terminated with `'\0'`, the null escape sequence.
+Hence char* is actually a pointer to an array of chars!
 
-string x = "String";
 char *s = "Char *";
 
-Here, x is ['S', 't', 'r', 'i', 'n', 'g', '\0'] and s is ['C', 'h', 'a', 'r', ' ', '*', '\0'];
+Here, s is ['C', 'h', 'a', 'r', ' ', '*', '\0'];
 
 There is a special type of loop to iterate over fixed size (non pointer) arrays, foreach.
 
@@ -49,14 +48,14 @@ foreach (int i in my_array) {
     ...
 }
 
-TODO: Rewrite the builtin `len (strlen) function!
+TODO: Write a strlen function!
 Just go through the char * argument incrementing a counter and then return when the char is \0.
 */
 
 // Don't touch below this line
 int main() {
     if (strlen("") != 0) {
-        `qout("Empty strings length should be 0");
+        `qout("Empty char*s length should be 0");
         return 1;
     }
     if (strlen("Hello") != 5) {

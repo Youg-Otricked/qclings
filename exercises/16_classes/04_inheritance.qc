@@ -32,7 +32,7 @@ final class FinalChild : Child {
 }
 
 This means that FinalChild cannot be inherited from. NOT that Child cannot have any more children.
-TODO: Make the class Vehicle with a protected integer numWheels and string brand, 
+TODO: Make the class Vehicle with a protected integer numWheels and char* brand, 
     a constructor that takes a brand, and sets the field accordingly and sets numWheels to -1,
     and a void method print that prints the vehicle in the format:
 

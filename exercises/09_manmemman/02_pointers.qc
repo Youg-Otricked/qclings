@@ -100,7 +100,7 @@ int *p = x;
 struct User {
     int transaction_count;
     int amount_spent;
-    string name;
+    char* name;
 }
 struct Transaction {
     int price;

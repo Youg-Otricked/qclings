@@ -37,7 +37,7 @@ To initialize nested structs, you just nest initializers.
 For SINGLE layer initializers, during assignment specifically, you can omit the type.
 Point top = {y: 1, x: -1};
 
-TODO: Create a struct called `Player` with a string name, integer health and integer score.
+TODO: Create a struct called `Player` with a char* name, integer health and integer score.
 */
 int main() {
     /* TODO: create two Players:

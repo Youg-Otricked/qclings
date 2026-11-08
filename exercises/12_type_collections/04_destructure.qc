@@ -7,7 +7,7 @@ If x and y are undeclared, it declares them, and if they are, then it assigns th
 
 You can also use this to declare multiple variables at once.
 
-(int, string){ x, y } = (0, "");
+(int, char*){ x, y } = (0, "");
 
 */
 int main() {

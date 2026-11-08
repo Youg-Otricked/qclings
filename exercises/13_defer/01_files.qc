@@ -2,7 +2,7 @@
 C^4 provides simple intrinsics for working with files.
 `open(path, permissions)
     Opens a file and returns its file descriptor as an int.
-    The permissions are given as a string:
+    The permissions are given as a char*:
         "r"  read
         "w"  write, create, truncate
         "rw"/"r+" read, write

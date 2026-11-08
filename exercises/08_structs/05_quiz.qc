@@ -10,8 +10,8 @@ This tests:
 Put them together.
 
 TODO:
-Create a struct called `Weapon` with a string name, and a int damage
-Create a struct called `Player` with a string name, a int health, and a Weapon weapon
+Create a struct called `Weapon` with a char* name, and a int damage
+Create a struct called `Player` with a char* name, a int health, and a Weapon weapon
 Write a function called `attack` that takes a Player by value and returns the damage of that player's weapon.
 In main:
 Create this Player:

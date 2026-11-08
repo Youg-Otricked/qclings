@@ -97,7 +97,7 @@ all_of(Proving p) {
 Then now p needs to be dereferenceable to prove that concept.
 */
 struct Paper {
-    string data;
+    char* data;
 }
 concept Printable {
     1_of {

@@ -24,7 +24,7 @@ map<int>(123, fn(int x) -> int { reuturn x; });
 
 Assignment:
 
-Complete the map function. It should take a StringView* and a lambda that takes a char and returns a char and set every char in the string to the result of the function for the original value about the char.
+Complete the map function. It should take a StringView* and a lambda that takes a char and returns a char and set every char in the stringview to the result of the function for the original value about the char.
 */
 // struct StringView
 // data is a pointer to possibly non-null-terminated string data

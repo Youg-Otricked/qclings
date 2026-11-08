@@ -6,7 +6,7 @@ qout can print variables using format specifiers, which tells C^4 which type to 
 %d = double
 %f = float
 %c = char
-%s = string
+%s = char*
 
 The variable is passed after the format string.
 For example:
@@ -19,7 +19,7 @@ variable is printed correctly.
     double decimal = 3.14159265358;
     float smallDecimal = 1.234567f;
     char character = '@';
-    string text = "Hello, World!";
+    char* text = "Hello, World!";
     `qout("%f\n", number);
     `qout("%i\n", decimal);
     `qout("%d\n", smallDecimal);
