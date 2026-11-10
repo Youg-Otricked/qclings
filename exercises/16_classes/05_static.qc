@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Static is very simple. Static is basically a property/method that belongs to the class instead of a instance.
 You access static fields with the :: (scope) operator. Static methods do not have access to this, because there is no instance.
@@ -19,6 +23,6 @@ int main() {
 }
 */
 int main() {
-    `qout("No challenge for this lesson. Just read the text");
+    IO::qout("No challenge for this lesson. Just read the text");
     return 0;
 }

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 How does one make a type take many types. Do you just need to 
 
@@ -129,6 +133,6 @@ int main() {
         return 1;
     }
 
-    `qout("You passed!");
+    IO::qout("You passed!");
     return 0;
 }

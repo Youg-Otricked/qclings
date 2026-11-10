@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 int main() {
 /*
 * is multiplication.
@@ -9,7 +12,7 @@ TODO: Fix the expressions below.
     int y = 4;
     int product = x / y;
     int quotient = x * y;
-    `qout("%i\n", product);
-    `qout("%i\n", quotient);
+    IO::qout("%i\n", product);
+    IO::qout("%i\n", quotient);
     return 0;
 }

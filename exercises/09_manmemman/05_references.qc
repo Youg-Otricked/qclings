@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 What if we want to pass the actual object without dealing with pointers?
 That's what references are for. References are internally, just pointers to lvalues that auto-dereference.
@@ -32,9 +36,9 @@ int main() {
     int b = 20;
     swap(a, b);
     if (a != 20 || b != 10) {
-        `qout("Fail: Swap did not swap");
+        IO::qout("Fail: Swap did not swap");
         return 1;
     }
-    `qout("PASS");
+    IO::qout("PASS");
     return 0;
 }

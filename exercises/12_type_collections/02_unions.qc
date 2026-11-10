@@ -13,9 +13,9 @@ You can use the `typeof` builtin to get the type of a value as a char*.
 For example:
 
 Value x = 123;
-`qout("%s", `typeof(x)); // int
+IO::qout("%s", `typeof(x)); // int
 x = "hello";
-`qout("%s", `typeof(x)); // char*
+IO::qout("%s", `typeof(x)); // char*
 
 To extract values from a union, you use a match, with the types as the cases and the name you want it as as in the parens you would use for tags in a switch.
 

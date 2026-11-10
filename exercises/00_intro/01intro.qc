@@ -1,5 +1,9 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
-    `qout(R"(
+    IO::qout(R"(
 Welcome To
 
   ____ /\ _  _   _ _                 
@@ -10,6 +14,6 @@ Welcome To
                            |___/
     Learn C^4 through broken programs.
     )");
-    `qout("This file is exercises/00_intro/01intro.qc. Check it out!\n");
-    `qout("Press n to move on to the next lesson\n");
+    IO::qout("This file is exercises/00_intro/01intro.qc. Check it out!\n");
+    IO::qout("Press n to move on to the next lesson\n");
 }

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 booleans have special operators.
@@ -28,6 +32,6 @@ TODO: make the printed value true if (x and y) or (x xor z) is true.
     bool y = false;
     bool z = true;
     // Don't touch above this line
-    `qout("%b", /* put your condition here! */);
+    IO::qout("%b", /* put your condition here! */);
     return 0;
 }

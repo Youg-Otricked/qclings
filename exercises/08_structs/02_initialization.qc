@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 Ok, so we have structs. What's the purpose if they can't store data?
 There are 2 ways to initialize structs (assign them with values).
@@ -52,7 +55,7 @@ int main() {
     */
     
     // Don't touch below this line
-    `qout("%st, %st", player1, player2);
+    IO::qout("%st, %st", player1, player2);
     return 0;
 }
 

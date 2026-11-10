@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 If all code is like this, it would get pretty repetitive
 
@@ -15,7 +19,7 @@ That's what functions are for.
 Functions are a repeatable block of code.
 
 void printHello() {
-    `qout("Hello");
+    IO::qout("Hello");
 }
 printHello();
 
@@ -73,7 +77,7 @@ Void:
 For example:
 
 void printHello() {
-    `qout("Hello");
+    IO::qout("Hello");
 }
 
 Calling:
@@ -105,9 +109,9 @@ For example:
 int tetr(int a, int b) {
     return a * b;
 }
-`qout("%i", tetr(12, 1));
+IO::qout("%i", tetr(12, 1));
 The function `tetr` is called, its return value is produced, and that
-value is passed to `qout`.
+value is passed to IO::qout`.
 
 Example:
 
@@ -116,7 +120,7 @@ int add(int a, int b) {
 }
 int main() {
     int x = add(21, 12);
-    `qout("%i", x);
+    IO::qout("%i", x);
     return 0;
 }
 `main` has been a function all along.
@@ -130,6 +134,6 @@ Functions also have scope, just like if statements
 // 2 doubles, width and height and returns the area of the rectangle (double).
 
 int main() {
-    `qout("%.2d", /* TODO: Call it with 7.3 and 6.2 */);
+    IO::qout("%.2d", /* TODO: Call it with 7.3 and 6.2 */);
     return 0;
 }

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Polymorphism is a neccesary part of inheritance. It allows a pointer to be of the class OR ALL CHILD CLASSES at runtime.
 You can only access fields/methods that are part of the pointers "type", not all fields and methods of the current child class, e.g. if the parent defines method doStuff
@@ -16,7 +20,7 @@ class Child {
 int main() {
     Base b;
     Base *p = &b;
-    `qout("%i", p->four()); // 4
+    IO::qout("%i", p->four()); // 4
     Child c;
     p = &c;
     return p->four(); // 444
@@ -25,6 +29,6 @@ int main() {
 Methods that can be overriden (replaced) by the child class must be marked "virtual", and the overriders must put 'override' right before the open brace.
 */
 int main() {
-    `qout("No challenge. Just read the lesson");
+    IO::qout("No challenge. Just read the lesson");
     return 0;
 }

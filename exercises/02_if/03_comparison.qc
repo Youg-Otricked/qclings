@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 QuarticC also has comparison operators.
@@ -13,6 +17,6 @@ QuarticC also has comparison operators.
     int y = 21;
     // TODO: create a boolean b thats value is true if x is more than y
     // Don't touch below this line
-    `qout("%b", b);
+    IO::qout("%b", b);
     return 0;
 }

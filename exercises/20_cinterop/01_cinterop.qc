@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 C^4 can use any C ABI (extern "C" code). You do this by:
 1. In your source code:
@@ -29,6 +32,6 @@ You can also include from ".hqc" files, which can also have the link preproccess
 include from .so/.a's
 */
 int main() {
-    `qout("No challenge, just read the text");
+    IO::qout("No challenge, just read the text");
     return 0;
 }

@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 int main() {
 /*
 whats the point of code if it always does the exact same thing in the exact same order all inline?

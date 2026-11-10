@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 Loops can also be nested. Yup. This is obviously usefull, but slow. Run the program and find out.
@@ -10,6 +14,6 @@ If its fast, you might just have a good PC. This simple 100000 iterations of 100
             res += j;
         }
     }
-    `qout("%i", res);
+    IO::qout("%i", res);
     return 0;
 }

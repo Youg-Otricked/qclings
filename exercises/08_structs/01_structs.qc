@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 A struct lets you create your own type (a `user type`. Creative, I know) by grouping multiple fields together.
 For example:

@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 Quiz Time! (#5)
 

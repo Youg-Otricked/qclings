@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 What if we need to do specific things depending on a variables value. Do we just need to do

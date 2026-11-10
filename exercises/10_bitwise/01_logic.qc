@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 You can use different numeric types for assignments.
 0b prefix = binary
@@ -26,6 +30,6 @@ $: Bitwise XOR:
     ~1010 = 0101
 */
 int main() {
-    `qout("No challenge, just read the lesson text");
+    IO::qout("No challenge, just read the lesson text");
     return 0;
 }

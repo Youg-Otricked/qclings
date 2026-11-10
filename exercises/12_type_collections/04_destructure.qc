@@ -1,4 +1,8 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
+
 Tuples can be _destructured_, which puts their values into a series of lvalues.
 
 (int, int){ x, y } = mytuple;
@@ -11,6 +15,6 @@ You can also use this to declare multiple variables at once.
 
 */
 int main() {
-    `qout("No challenge, just read lesson text\n");
+    IO::qout("No challenge, just read lesson text\n");
     return 0;
 }

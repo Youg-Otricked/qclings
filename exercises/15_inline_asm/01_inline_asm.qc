@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 C^4 supports inline assembly with the `inline builtin.
 The first argument is the assembly string:
@@ -29,6 +33,6 @@ int x = 10;
 
 // Don't touch below this line.
 int main() {
-    `qout("No challenge for this lesson");
+    IO::qout("No challenge for this lesson");
     return 0;
 }

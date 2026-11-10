@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 TLDR: Classes are structs with behavior attached.
 Classes are a core part of the Object Oriented Programming paradigm, which is on the middle of the idea of state.
@@ -75,7 +79,7 @@ int main() {
     transaction.attachUser(user);
     transaction.process();
     if (user.purchases != 1 || user.money_spent != 100.95) {
-        `qout("Expected purchases to be 1 and money_spent to be 100.95, got %i and %d", user.purchases, user.money_spent);
+        IO::qout("Expected purchases to be 1 and money_spent to be 100.95, got %i and %d", user.purchases, user.money_spent);
         return 1;
     }
     return 0;

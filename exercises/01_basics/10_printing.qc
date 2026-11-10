@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 qout can print variables using format specifiers, which tells C^4 which type to format the data as.
@@ -11,7 +15,7 @@ qout can print variables using format specifiers, which tells C^4 which type to 
 The variable is passed after the format string.
 For example:
 int x = 42;
-`qout("%i", x);
+IO::qout("%i", x);
 TODO: Fix the format specifiers so each
 variable is printed correctly.
 */
@@ -20,10 +24,10 @@ variable is printed correctly.
     float smallDecimal = 1.234567f;
     char character = '@';
     char* text = "Hello, World!";
-    `qout("%f\n", number);
-    `qout("%i\n", decimal);
-    `qout("%d\n", smallDecimal);
-    `qout("%s\n", character);
-    `qout("%c\n", text);
+    IO::qout("%f\n", number);
+    IO::qout("%i\n", decimal);
+    IO::qout("%d\n", smallDecimal);
+    IO::qout("%s\n", character);
+    IO::qout("%c\n", text);
     return 0;
 }

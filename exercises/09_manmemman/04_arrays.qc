@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 Arrays are just conitguous blocks of memory. Array types are just types ending in [].
 
@@ -55,13 +58,13 @@ Just go through the char * argument incrementing a counter and then return when 
 // Don't touch below this line
 int main() {
     if (strlen("") != 0) {
-        `qout("Empty char*s length should be 0");
+        IO::qout("Empty char*s length should be 0");
         return 1;
     }
     if (strlen("Hello") != 5) {
-        `qout("Expected the length of hello to be 5");
+        IO::qout("Expected the length of hello to be 5");
         return 1;
     }
-    `qout("PASS");
+    IO::qout("PASS");
     return 0;
 }       

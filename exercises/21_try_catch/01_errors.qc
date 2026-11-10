@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 C^4 supports errors. Obviously. Below is a example of error types & usage. 
 Error types are any:
@@ -29,7 +32,7 @@ Err2 err2() {
 
 int main() {
     err2() catch (e) {
-        `qout("caught a error: %d", e as double);
+        IO::qout("caught a error: %d", e as double);
         return 0;
     }; // explained later
     return 1;

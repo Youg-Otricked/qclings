@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 Unlike structs, classes cannot be initialize using initializer lists or map initializer. You may think this makes classes much worse than structs. That would be wrong.
 That's because of a special method classes have. _Constructors_. Constructors are methods that are called to initialize (construct) a instance of a class.

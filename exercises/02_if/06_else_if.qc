@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 Sometimes we want to check more than two possibilities.
@@ -22,11 +26,11 @@ TODO: Fix the else if statement so that:
     int x = 7;
     // do not touch above this line
     if (x > 10) {
-        `qout("big");
+        IO::qout("big");
     } else if (x > 10) {
-        `qout("small");
+        IO::qout("small");
     } else {
-        `qout("ten");
+        IO::qout("ten");
     }
     // do not touch below this line
     return 0;

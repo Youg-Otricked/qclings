@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Parameters can have default values.
 
@@ -29,6 +33,6 @@ Challenge: Don't use it.
 
 // Don't touch below this line.
 int main() {
-    `qout("%i, %i, %i", powerOf(5), powerOf(2, 3), powerOf(10, 1));
+    IO::qout("%i, %i, %i", powerOf(5), powerOf(2, 3), powerOf(10, 1));
     return 0;
 }

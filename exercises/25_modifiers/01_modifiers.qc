@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Modifiers let you wrap functions and values in custom behavior.
 
@@ -28,6 +32,6 @@ returns is a reference to the return value.
 value in on_use is the value being on_used'
 */
 int main() {
-    `qout("No challenge");
+    IO::qout("No challenge");
     return 0;
 }

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Pointers are called that because they _point_ to an address in memory.
 To get the address of something, you use the `&` (address of) operator.
@@ -33,9 +37,9 @@ We can't just use pointers like data, becuase they are a different thing. They a
 
 int x = 123;
 int *p = &x;
-`qout("%i", *p); // 123
+IO::qout("%i", *p); // 123
 *p = 21;
-`qout("%i", x); // 21
+IO::qout("%i", x); // 21
 
 Because p points to the memory of x, if you edit the value at the dereference of p, you are also by extention editing x.
 
@@ -46,7 +50,7 @@ int *p = nullptr;
 It is also used to say that a function returning a pointer could not create it / got invalid input, so when a pointer can be nullptr, it's a good practice to check.
 
 if (!p) { // Truthiness for pointers is p != nullptr so !p == !(p != nullptr) or p == nullptr
-    `qout("P is null");
+    IO::qout("P is null");
     return 0;
 }
 *p;
@@ -83,7 +87,7 @@ int main() {
 
 To print a pointer, you use the %p formatter, and it will print the address as hexadecimal.
 
-`qout("%p", myPointer); // some 64 bit hex string
+IO::qout("%p", myPointer); // some 64 bit hex string
 
 There is also a special pointer type that can hold ANY POINTER. This is the void pointer.
 
@@ -115,22 +119,22 @@ int main() {
     User qclings = createUser("C^4lings");
     Transaction computer = createTransaction(500);
     if (computer.price != 500) {
-        `qout("Fail: createTransaction does not set the price correctly");
+        IO::qout("Fail: createTransaction does not set the price correctly");
         return 1;    
     }
     processTransaction(&qclings, &computer);
     if (computer.price != -1) {
-        `qout("Fail: processTransaction does not set the price to -1 after proccessing");
+        IO::qout("Fail: processTransaction does not set the price to -1 after proccessing");
         return 1;
     }
     if (qclings.transaction_count != 1) {
-        `qout("Fail: processTransaction does not increment the users transaction count");
+        IO::qout("Fail: processTransaction does not increment the users transaction count");
         return 1;
     }
     if (qclings.amount_spent != 500) {
-        `qout("Fail: processTransaction does not add the transaction price to amount_spent");
+        IO::qout("Fail: processTransaction does not add the transaction price to amount_spent");
         return 1;
     }
-    `qout("PASS");
+    IO::qout("PASS");
     return 0;
 }

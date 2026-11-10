@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Really, there are 3 ways to structure packages.
 
@@ -65,6 +69,6 @@ and you can still use
 alias/...
 */
 int main() {
-    `qout("No challenge for this lesson. Just read");
+    IO::qout("No challenge for this lesson. Just read");
     return 0;
 }

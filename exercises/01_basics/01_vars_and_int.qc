@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 int is a 32 bit integer between -2.147 and 2.147 billion
@@ -25,9 +29,9 @@ x = y;
 */
     int y = 12;
     int x = 2;
-    `qout("%i\n", x);
+    IO::qout("%i\n", x);
     // TODO: Set x's value to y
     // don't touch below this line
-    `qout("%i", x);
+    IO::qout("%i", x);
     return 0;
 }

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Some common while patterns have special loops:
 
@@ -17,6 +21,6 @@ do {
 
 */
 int main() {
-    `qout("Just read the comments");
+    IO::qout("Just read the comments");
     return 0;
 }

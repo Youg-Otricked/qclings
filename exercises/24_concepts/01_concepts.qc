@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Concepts are usertypes that check if other types fulfill constraints.
 Let's make a empty concept, Mathmatical
@@ -107,6 +111,6 @@ concept Printable {
 }
 // TODO: Make the struct prove Printable
 int main() {
-    `qout("%b", Printable proved_by Paper);
+    IO::qout("%b", Printable proved_by Paper);
     return 0;
 }

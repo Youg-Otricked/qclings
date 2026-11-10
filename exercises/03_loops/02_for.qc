@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 You learned about ++/-- last lesson. The intresting thing is they have different meanings depending on its position.
@@ -57,10 +61,10 @@ for (int i = 0; i < 10; i++) {
     int x = 0;
     // TODO: Create a for loop that creates a integer i set to 1 and while x is less than or equal to 10 adds i to x then at the end of each iteration increment i
     
-    `qout("%i\n", x);
+    IO::qout("%i\n", x);
     // TODO: set x to 10, then while x is less than 100, add x / 3 to x.
     // Challenge: Do this all in the start stop step of the forloop with no body.
     
-    `qout("%i", x);
+    IO::qout("%i", x);
     return 0;
 }

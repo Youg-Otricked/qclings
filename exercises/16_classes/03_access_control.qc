@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Sometimes we don't want all code to be able to access everything. A lot of the time we only want users to be able to access the stuff they need. 
 This concept is called *encapsulation*.
@@ -16,6 +20,6 @@ int main() {
 }
 */
 int main() {
-    `qout("No lesson. Just read the comments");
+    IO::qout("No lesson. Just read the comments");
     return 0;
 }

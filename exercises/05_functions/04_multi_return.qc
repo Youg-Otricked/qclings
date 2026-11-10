@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 A function can return multiple values.
 For example, a function can calculate both the addition and subtraction of two numbers at once:
@@ -17,6 +21,6 @@ returns the smaller value first and the larger value second.
 // Don't touch below this line.
 int main() {
     int min, int max = minMax(12, 7);
-    `qout("%i, %i", min, max);
+    IO::qout("%i, %i", min, max);
     return 0;
 }

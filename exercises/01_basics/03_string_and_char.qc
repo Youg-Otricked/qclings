@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 char stores a single character wrapped in single quotes, E.G. 
@@ -15,6 +19,6 @@ char* is actually something called a pointer. It will be explained in chapter 9.
 */
     // TODO: Create a char variable z storing capital Z and a char* variable text storing "This is a char*"
     // Don't touch below this line
-    `qout("%c%c%c%c%c %s", z, z, z, z, z, text);
+    IO::qout("%c%c%c%c%c %s", z, z, z, z, z, text);
     return 0;
 }

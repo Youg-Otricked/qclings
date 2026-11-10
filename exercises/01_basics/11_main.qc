@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /* all code starts in the first line of the `main` function. We will cover functions later
 all you need to know is main looks like this
 
@@ -7,5 +11,5 @@ int main() {
 }
 */
 // TODO: wrap the code in the main function
-`qout("Hello, World!");
+IO::qout("Hello, World!");
 

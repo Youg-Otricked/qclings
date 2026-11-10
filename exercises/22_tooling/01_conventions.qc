@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 QuarticC has unusual naming conventions:
 Type,Casing,Why
@@ -72,6 +76,6 @@ namespace Nothing_Illegal_I_Promise { // Intentionally formatted as a non-inclus
 ```
 */
 int main() {
-    `qout("No exercises. Just read the lesson text");
+    IO::qout("No exercises. Just read the lesson text");
     return 0;
 }

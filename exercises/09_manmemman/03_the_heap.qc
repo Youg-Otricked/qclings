@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Finally time to learn about the heap.
 
@@ -59,28 +63,28 @@ int main() {
     Server *server = makeServer(8);
     Job *job = reserveCores(server, -1);
     if (job) {
-        `qout("Expected a null job for a negative core count");
+        IO::qout("Expected a null job for a negative core count");
         return 1;
     }
     job = reserveCores(server, 9);
     if (job) {
-        `qout("Expected a null job for a amount of cores more than the available cores on the server");
+        IO::qout("Expected a null job for a amount of cores more than the available cores on the server");
         return 1;
     }
     job = reserveCores(server, 4);
     if (!job) {
-        `qout("Expected a valid job for a valid core count");
+        IO::qout("Expected a valid job for a valid core count");
         return 1;
     }
     if (server->free_cores != 4) {
-        `qout("Expected the amount of free cores to be 4 after using 4 cores");
+        IO::qout("Expected the amount of free cores to be 4 after using 4 cores");
         return 1;
     }
     finishJob(job);
     if (server->free_cores != 8) {
-        `qout("Expected the amount of free cores to be 8 after releasing all jobs");
+        IO::qout("Expected the amount of free cores to be 8 after releasing all jobs");
         return 1;
     }
-    `qout("PASS");
+    IO::qout("PASS");
     return 0;
 }

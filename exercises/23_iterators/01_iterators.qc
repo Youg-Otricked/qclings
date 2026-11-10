@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Iterators allow you to perform operations on user defined collections.
 Foreach uses iterators!
@@ -22,7 +26,7 @@ To define a iterator:
 `
 */
 int main() {
-    `qout("No exercise. Just read the lesson");
+    IO::qout("No exercise. Just read the lesson");
     return 0;
 }
 

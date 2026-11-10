@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Note: Over this lesson terms such as "inval" will be used. This means "This pointer will be freed or made invalid by some other mean".
 Ownership basically is just the guessing game of "Who frees what".
@@ -37,6 +41,6 @@ There are a few rules:
   - Freeing the allocation = inval reference.
 */
 int main() {
-    `qout("No lesson. Just read the comments in this file");
+    IO::qout("No lesson. Just read the comments in this file");
     return 0;
 }

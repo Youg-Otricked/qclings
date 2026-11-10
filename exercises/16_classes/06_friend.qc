@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Friend is a keyword that gives another class access to private and protected fields/methods.
 
@@ -24,7 +28,7 @@ class Transaction {
         this->user = user;
     }
     void resolve() {
-        `qout("Resolving transaction for card number starting with %c", user->card_number[0]);
+        IO::qout("Resolving transaction for card number starting with %c", user->card_number[0]);
         return;
     }
 }

@@ -15,6 +15,11 @@ namespace Exported {
     HASHTAGinclude<OSInterop, std>
 }
 I'm using HASHTAG # because otherwise it would actually try and include the files.
+
+You have been seeing includes in these files from the very start! Look at any previous lesson, and you will see us include the IO namespace! That is where the printing and input functions are in the standard library.
+IO::qout is one you've been using a lot, but there is also:
+IO::getWord: returns a heap allocated (you must free) char* containing up to the next space of user input
+IO::getLine: returns a heap allocated (you must free) char* containing up to the next \n of user input
 TODO: Include the Vector namespace from the standard library.
 */
 // Put the includes here

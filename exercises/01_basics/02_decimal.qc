@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 the float type stores a 7 digit floating point number.
@@ -22,6 +26,6 @@ the double type is like the float type, except it doesn't have a `f` and is 15is
     // TODO: Create a double, d, storing the first 6 digits of pi (3.14159)
     
     // Don't touch below this line
-    `qout("%f, %d", f, d);
+    IO::qout("%f, %d", f, d);
     return 0;
 }

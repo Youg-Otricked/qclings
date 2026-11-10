@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Structs are passed by value.
 That means when you pass a struct to a function, the function receives a copy of the struct.
@@ -29,9 +33,9 @@ subtracts 25 from its health.
 // Don't touch below this line.
 int main() {
     Player player = {100};
-    `qout("Before damage: %i\n", player.health);
+    IO::qout("Before damage: %i\n", player.health);
     damage(player);
-    `qout("After damage: %i", player.health);
+    IO::qout("After damage: %i", player.health);
     return 0;
 }
 

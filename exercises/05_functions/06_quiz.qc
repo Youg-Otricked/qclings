@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Quiz Time! (#3)
 
@@ -30,7 +34,7 @@ Tests:
 
 // Don't touch below this line.
 int main() {
-    `qout("%i, %i, %i, %i, %i",
+    IO::qout("%i, %i, %i, %i, %i",
         clamp(5, 0, 10),
         clamp(-3, 0, 10),
         clamp(20, 0, 10),

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Pointers... again? 
 
@@ -18,6 +22,6 @@ int main() {
 }
 */
 int main() {
-    `qout("No challenge, just read the lesson text.\n");
+    IO::qout("No challenge, just read the lesson text.\n");
     return 0;
 }

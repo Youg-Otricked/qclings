@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Tuples are like structs but fields don't have names... and they also don't have names.
 
@@ -20,6 +24,6 @@ TODO: Define a alias for a tuple of int and int as Coordinate.
 
 int main() {
     int x, int y = unpackCoordinate(makeCoordinate(213, 321));
-    `qout("%i", x + y);
+    IO::qout("%i", x + y);
     return 0;
 }

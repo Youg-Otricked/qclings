@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 C^4 provides simple intrinsics for working with files.
 `open(path, permissions)

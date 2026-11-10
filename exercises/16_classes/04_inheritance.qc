@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 This ones a doozy.
 Inheritance is a concept that allows derived (child) classes to be created, which copy (inherit) methods and fields from the parent class. 

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Shifts directly move around bits on numbers.
 
@@ -74,6 +78,6 @@ Shifts precedancy sits between multiplication & division and plus & minus
     floor(x / (2^(n mod b))) + ((x * 2^(b - (n mod b))) mod (2^b)
 */
 int main() {
-    `qout("No challenge, just read the lesson text");
+    IO::qout("No challenge, just read the lesson text");
     return 0;
 }

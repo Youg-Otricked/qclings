@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 C^4 has several intrinsics for explicitly converting values between types.
 `to_int converts a value to an int.

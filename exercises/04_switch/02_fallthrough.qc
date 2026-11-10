@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 Why did we need those break statements in the switch?
@@ -12,11 +16,11 @@ switch (day) {
     case 4:
     case 5:
     case 6:
-        `qout("Weekday");
+        IO::qout("Weekday");
         break;
     case 1:
     case 7:
-        `qout("Weekend");
+        IO::qout("Weekend");
         break;
 }
 

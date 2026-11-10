@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 All programs use memory. It's that stuff AI shot the price up of by... like 400%. But there are 2 different places in memory. The stack, and the heap.
 The Stack:
@@ -32,6 +36,6 @@ You can push a new scope (creating a new stack frame) by wrapping code in braces
 }
 */
 int main() {
-    `qout("No challenge for this lesson. Just read the lesson");
+    IO::qout("No challenge for this lesson. Just read the lesson");
     return 0;
 }

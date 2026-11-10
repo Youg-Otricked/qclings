@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 You can imagine how horrid it would be to constantly manage things like close.
 Imagine we open 4 files. Now before every error case and return, we must manually run `close(myFile);
@@ -15,9 +19,9 @@ int x = 12;
 } // x is 0
 {
     defer {
-        `qout("%i", x);
+        IO::qout("%i", x);
         int y = x + 2;
-        `qout("%i", y);
+        IO::qout("%i", y);
     }
     x = 2;
 } // prints 24

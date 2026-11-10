@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 To define a type alias, you use syntax like this.
 
@@ -12,6 +16,6 @@ TODO: Define the ErrCode alias, which should be equal to int
 
 int main() {
     ErrCode x = 0;
-    `qout("Done?");
+    IO::qout("Done?");
     return 0;
 }

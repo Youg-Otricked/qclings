@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 This lesson will just cover some bonus memory things.
 
@@ -58,7 +62,7 @@ This lesson will just cover some bonus memory things.
     to_address returns a addr_t, the address of the pointer argument.
 */
 int main() {
-    `qout("No challenge, just read the comments");
+    IO::qout("No challenge, just read the comments");
     return 0;
 }
    

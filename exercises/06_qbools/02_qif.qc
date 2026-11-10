@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 qif statements are like if converted for qbool.
 qif (...) {

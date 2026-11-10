@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 BONUS!
@@ -41,6 +45,6 @@ TODO: Fix the operators below.
     x =* 2;
     x =/ 4;
     x % 3;
-    `qout("%i\n", x);
+    IO::qout("%i\n", x);
     return 0;
 }

@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 qbools are like bools... but 4.
 Binary is just a number system. Binary works like this:
@@ -48,6 +52,6 @@ QBools have 8 special operators:
 
 // Don't touch below this line
 int main() {
-    `qout("%b, %b", isTrue(qfalse), isTrue(both));
+    IO::qout("%b, %b", isTrue(qfalse), isTrue(both));
     return 0;
 }

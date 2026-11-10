@@ -1,9 +1,13 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 BONUS!
 If a if statement is only one line long you can omit the braces
 
-if (i == 0) `qout("i is 0");
+if (i == 0) IO::qout("i is 0");
 
 Quiz!
 This tests: boolean logic, if/else, comparison 

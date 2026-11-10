@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 
 Namespaces are very simple. They are named organizers for code.
@@ -18,6 +22,10 @@ namespace Math {
 Math::add(123, 321);
 ...
 
+You've been using one for a while! IO is a namespace with the qout function in it.
+
+IO::qout
+
 TODO: Create the sumultiply function in the math namespace which should take int a and int b return a * b + a * b
 */
 namespace Math {
@@ -25,7 +33,7 @@ namespace Math {
 }
 // Don't touch below this line.
 int main() {
-    `qout("%i", Math::sumultiply(123, 321));
+    IO::qout("%i", Math::sumultiply(123, 321));
     return 0;
 }
 

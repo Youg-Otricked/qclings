@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 The + operator performs addition.
@@ -22,8 +26,8 @@ the expected results.
     int sum = x - y;
     int difference = x + y;
 
-    `qout("sum: %i\n", sum);
-    `qout("difference: %i\n", difference);
+    IO::qout("sum: %i\n", sum);
+    IO::qout("difference: %i\n", difference);
 
     return 0;
 }

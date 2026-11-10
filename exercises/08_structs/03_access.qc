@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Struct fields can be accessed using the `.` operator.
 For example:
@@ -10,7 +14,7 @@ Point p = {10, 20};
 
 You can read a field:
 
-`qout("%i", p.x);
+IO::qout("%i", p.x);
 
 You can also change a field:
 

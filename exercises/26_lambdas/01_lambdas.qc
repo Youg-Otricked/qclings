@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 Lambdas allow you to pass a function... to a function!
 
@@ -45,10 +48,10 @@ int main() {
     map(&s, fn(char c) -> char {
         return ((c >= 'a' && c <= 'c') ? c - 32 : c);
     });
-    `qout("Text: %c%c%c%c%c%c%c%c%c%c%c%c%c\n", s.data[0], s.data[1], s.data[2], s.data[3], s.data[4], s.data[5], s.data[6], s.data[7], s.data[8], s.data[9], s.data[10], s.data[11], s.data[12]);
+    IO::qout("Text: %c%c%c%c%c%c%c%c%c%c%c%c%c\n", s.data[0], s.data[1], s.data[2], s.data[3], s.data[4], s.data[5], s.data[6], s.data[7], s.data[8], s.data[9], s.data[10], s.data[11], s.data[12]);
     map(&s, fn(char c) -> char {
         return ((c == ',' || c == '!' || c == ' ') ? '-' : c);
     });
-    `qout("Text: %c%c%c%c%c%c%c%c%c%c%c%c%c\n", s.data[0], s.data[1], s.data[2], s.data[3], s.data[4], s.data[5], s.data[6], s.data[7], s.data[8], s.data[9], s.data[10], s.data[11], s.data[12]);
+    IO::qout("Text: %c%c%c%c%c%c%c%c%c%c%c%c%c\n", s.data[0], s.data[1], s.data[2], s.data[3], s.data[4], s.data[5], s.data[6], s.data[7], s.data[8], s.data[9], s.data[10], s.data[11], s.data[12]);
     return 0;
 }

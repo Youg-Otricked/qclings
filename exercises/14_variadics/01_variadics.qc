@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Variadic functions can accept any number of arguments.
 To make a function variadic, add `...` before the final parameter's name.
@@ -33,6 +37,6 @@ of integer arguments and return their product.
 
 // Don't touch below this line.
 int main() {
-    `qout("%i", multiplyALot(2, 3, 4));
+    IO::qout("%i", multiplyALot(2, 3, 4));
     return 0;
 }

@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 In C^4, enums are simple. They are collections of constant values.
 
@@ -46,7 +49,7 @@ match ... {
 
 // Don't touch below this line.
 int main() {
-    `qout("%i, ", ErrorCode.NOT_FOUND);
-    `qout("%i", ErrorCode.IM_A_TEAPOT);
+    IO::qout("%i, ", ErrorCode.NOT_FOUND);
+    IO::qout("%i", ErrorCode.IM_A_TEAPOT);
     return 0;
 }

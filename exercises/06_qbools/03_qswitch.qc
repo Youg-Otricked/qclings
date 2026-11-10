@@ -1,3 +1,6 @@
+namespace Exported {
+    #include <IO, std>
+}
 /*
 What if we want to do somthing other than multi-branch? Like check for both SPECIFICALLY?
 That's what qswitch is for.

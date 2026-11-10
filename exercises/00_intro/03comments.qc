@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 comments are for puting plain text in your code. The compiler ignores them.
@@ -9,6 +13,6 @@ for multiline comments you wrap them in /* and (this star slash will end the mul
 
 // TODO: comment out this line
 
-    `qout("Hello, World!");
+    IO::qout("Hello, World!");
     return 0;
 }

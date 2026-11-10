@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 Operator Overloading allows classes to define behavior to run when you use operators (such as +) on them. Operator overloads look like this.
 
@@ -22,7 +26,7 @@ It's as you would expect for all the other binops, then unary operator overloads
     _destroy is not automatically called, and is instead a convention to create as a method to clean up the classes heap allocations, then you can defer it at creation.
 */
 int main() {
-    `qout("No challenge. Just read the exercise");
+    IO::qout("No challenge. Just read the exercise");
     return 0;
 }
    

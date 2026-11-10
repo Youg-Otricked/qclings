@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 int main() {
 /*
 But what if we want somthing to run multiple times? Do we just need to do
@@ -6,11 +10,11 @@ int x = 100;
 if (x > 1) {
     x -= 1;
 }
-`qout("%i", x);
+IO::qout("%i", x);
 if (x > 100) {
     x -= 1;
 }
-`qout("%i", x);
+IO::qout("%i", x);
 if (...
 ...
 ```
@@ -28,7 +32,7 @@ e.g.
 int x = 0;
 while (x < 10) {
     x += 1;
-    `qout("%i", x);
+    IO::qout("%i", x);
 }
 ```
 */

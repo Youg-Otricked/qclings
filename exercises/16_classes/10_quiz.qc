@@ -1,3 +1,7 @@
+namespace Exported {
+    #include <IO, std>
+}
+
 /*
 QUIZ TIME! (#6)
 
@@ -20,8 +24,8 @@ int main() {
     // TODO: Create a Server server with 10 tb of storage 24 cores 5.0 ghz and 1000 max users
     // TODO: Create a Computer *computer set to the address of the PersonalComputer.
     // Don't touch below this line.
-    `qout("%i\n", computer->disk_size);
+    IO::qout("%i\n", computer->disk_size);
     computer = &server;
-    `qout("%i, %i", computer->disk_size, computer->cpu_cores);
+    IO::qout("%i, %i", computer->disk_size, computer->cpu_cores);
     return 0;
 }
